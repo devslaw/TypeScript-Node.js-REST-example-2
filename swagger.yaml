@@ -1,0 +1,121 @@
+swagger: '2.0'
+info:
+  description: BankingApp API Documentation
+  version: 1.0.0
+  title: Banking API
+basePath: "/v1"
+tags:
+- name: User
+paths:
+  "/user/auth/login/":
+    post:
+      tags:
+      - User
+      summary: Login
+      description: ''
+      operationId: login
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Auth Data
+        required: true
+        schema:
+          "$ref": "#/definitions/Login"
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: string
+        '404':
+          description: Resource ID not found
+        '500':
+          description: Handling error
+  "/user/auth/registration/":
+    post:
+      tags:
+      - User
+      summary: Registration
+      description: ''
+      operationId: Registration
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Registration Data
+        required: true
+        schema:
+          "$ref": "#/definitions/Registration"
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: string
+        '404':
+          description: Resource ID not found
+        '500':
+          description: Handling error
+  "/user/auth/refresh-token/":
+    post:
+      tags:
+      - User
+      summary: RefreshToken
+      description: ''
+      operationId: refresh-token
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Refresh Token Data
+        required: true
+        schema:
+          "$ref": "#/definitions/RefreshToken"
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: string
+        '404':
+          description: Resource ID not found
+        '500':
+          description: Handling error
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  Login:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+  Registration:
+     type: object
+     properties:
+           name:
+             type: string
+           email:
+              type: string
+           phone:
+              type: string
+           password:
+              type: string
+  RefreshToken:
+     type: object
+     properties:
+           accessToken:
+             type: string
+           refreshToken:
+              type: string

@@ -1,0 +1,62 @@
+{
+  "name": "Banking",
+  "version": "1.0.0",
+  "description": "Banking app",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "debug": "^2.6.8",
+    "dotenv": "^2.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.0",
+    "iconv-lite": "^0.4.17",
+    "jsonwebtoken": "^8.3.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.3.2",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.6.1",
+    "pg-hstore": "^2.3.2",
+    "rxjs": "^5.4.2",
+    "sequelize": "^4.41.1",
+    "swagger-ui-express": "^4.0.1",
+    "uniqid": "^5.0.3",
+    "winston": "^2.3.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/uniqid": "^4.1.2",
+    "@types/chai": "^4.0.0",
+    "@types/debug": "0.0.29",
+    "@types/dotenv": "^2.0.20",
+    "@types/express": "^4.0.35",
+    "@types/mocha": "^2.2.41",
+    "@types/morgan": "^1.7.32",
+    "@types/node": "^6.0.77",
+    "@types/passport": "^0.3.3",
+    "@types/passport-jwt": "^2.0.20",
+    "@types/sequelize": "^4.27.30",
+    "chai": "^4.0.2",
+    "chai-http": "^4.2.0",
+    "concurrently": "^4.0.1",
+    "fuse-box": "^3.6.0",
+    "mocha": "^5.2.0",
+    "mocha-typescript": "^1.1.4",
+    "nodemon": "^1.18.4",
+    "typescript": "^2.9.2",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.9"
+  },
+  "scripts": {
+    "start": "node fusebox.js",
+    "test": "export NODE_ENV=test && node dist/seeder.js && mocha -t 30000 dist/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [],
+  "author": "Arthur Arakelyan <arthur@devslaw.com>",
+  "license": "ISC",
+  "homepage": "#readme"
+}

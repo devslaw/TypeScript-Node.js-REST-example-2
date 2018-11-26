@@ -1,0 +1,27 @@
+version: '2'
+services:
+  web:
+    restart: always
+    build: .
+    command: npm start
+    env_file:
+      - .env
+    volumes:
+       - .:/usr/src/app
+       - /usr/src/app/node_modules/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: ${PG_URL}
+  db:
+    image: postgres:9.6.2-alpine
+    env_file:
+          - .env
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_DB: ${PG_DB}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+    ports:
+     - "5432:5432"
