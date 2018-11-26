@@ -7,7 +7,7 @@ App uses Typescript, Node.js, Express and PostgreSQL
 Create **.env** file in root directory 
 using **.env.example** file.
 
-###Running Locally
+### Running Locally
 
 #### Docker
 
